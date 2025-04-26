@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axios from 'axios';
-import Navbar from '../components/Navigation';
+import Navbar from '../components/NavigationStudent';
 
 function Profile() {
   const [profile, setProfile] = useState(null);
