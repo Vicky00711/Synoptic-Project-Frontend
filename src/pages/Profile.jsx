@@ -41,7 +41,7 @@ if (!profile) {
 
   return (
     <div>
-      <Navbar />
+      <NavigationStudent />
       <div className="bg-white overflow-hidden shadow rounded-lg border max-w-2xl mx-auto mt-10 p-6">
         <h3 className="text-lg leading-6 font-medium text-gray-900 mb-6">
           Student Profile

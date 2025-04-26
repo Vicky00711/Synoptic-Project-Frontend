@@ -13,6 +13,7 @@ import AddCourseMaterials from './pages/AddCourseMaterials';
 import ListStudents from './pages/ListStudents';
 import StudentDashBoard from './pages/StudentDashBoard';
 import Profile from './pages/Profile';
+import CourseMaterials from './pages/CourseMaterials';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/grade/:gradeId/students" element={<ListStudents />} />       
           <Route path="/stduentDashboard" element={<StudentDashBoard />} />       
           <Route path="/profile" element={<Profile />} />       
+          <Route path="/courseMaterials" element={<CourseMaterials />} />       
         </Routes>
       </Router>
     </div>

@@ -18,7 +18,7 @@ const AdminDashboard = () => {
     }  
 
     const navigatePage2 = () => {
-        navigate2('/listClass');
+        navigate2('/courseMaterials');
     }
   return (
     <div>
