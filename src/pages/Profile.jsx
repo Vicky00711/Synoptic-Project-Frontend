@@ -56,7 +56,7 @@ if (!profile) {
             <dd className="text-sm text-gray-900">{profile.email}</dd>
           </div>
           <div className="sm:grid sm:grid-cols-3 sm:gap-4">
-            <dt className="text-sm font-medium text-gray-500">Phone Number</dt>
+            <dt className="text-sm font-medium text-gray-500">Parent Contact Number</dt>
             <dd className="text-sm text-gray-900">{profile.parentContact}</dd>
           </div>
           <div className="sm:grid sm:grid-cols-3 sm:gap-4">
