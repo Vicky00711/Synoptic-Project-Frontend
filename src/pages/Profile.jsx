@@ -34,7 +34,9 @@ function Profile() {
 
     fetchProfile();
   },[]);
-
+if (!profile) {
+  return <div>Loading...</div>;
+}
  
 
   return (
