@@ -1,0 +1,35 @@
+name: Snyk Frontend Scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  snyk:
+    name: Run Snyk to check for vulnerabilities
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js (needed to run Snyk CLI, but doesn't mean you're testing with Node)
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18' # or whatever version you prefer
+
+    - name: Install Snyk CLI
+      run: npm install -g snyk
+
+    - name: Run Snyk Test
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      run: snyk test
+
+    # Optional: if you're using a package.json but only want to check for known issues
+    - name: Run Snyk for HTML/CSS/JS project (e.g., check Dockerfile or static files)
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      run: snyk code test
