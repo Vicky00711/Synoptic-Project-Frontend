@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 function Home() {
 
@@ -34,10 +35,22 @@ function Home() {
             // }
             else {
                 setError(response.data.message);
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Login failed. Please check your credentials.',
+                    icon: 'error',
+                    confirmButtonText: 'OK',
+                });
             }
         } catch (error) {
             console.error(error);
             setError('An error occurred. Please try again.');
+            Swal.fire({
+                title: 'Error!',
+                text: 'Login failed. Please check your credentials.',
+                icon: 'error',
+                confirmButtonText: 'OK',
+            });
         }
     };       
   return (

@@ -26,6 +26,17 @@ function CreateUser() {
       return;
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Please enter a valid email address.',
+      icon: 'error',
+      confirmButtonText: 'OK',
+    });
+    return;
+  }
+
     if (password !== cpassword) {
       Swal.fire({
         title: 'Error!',
