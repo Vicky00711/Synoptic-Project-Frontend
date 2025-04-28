@@ -14,6 +14,7 @@ import ListStudents from './pages/ListStudents';
 import StudentDashBoard from './pages/StudentDashBoard';
 import Profile from './pages/Profile';
 import CourseMaterials from './pages/CourseMaterials';
+import EditUser from './pages/EditUser';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/stduentDashboard" element={<StudentDashBoard />} />       
           <Route path="/profile" element={<Profile />} />       
           <Route path="/courseMaterials" element={<CourseMaterials />} />       
+          <Route path="/editUser/:id" element={<EditUser />} />       
         </Routes>
       </Router>
     </div>

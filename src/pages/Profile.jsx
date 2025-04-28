@@ -67,6 +67,8 @@ if (!profile) {
             <dt className="text-sm font-medium text-gray-500">Class Name</dt>
             <dd className="text-sm text-gray-900">{profile.gradeLevelName}</dd>
           </div>
+          
+          
         </dl>
       </div>
     </div>

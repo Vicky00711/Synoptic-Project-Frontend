@@ -90,7 +90,7 @@ function ListUsers() {
                   <td className="p-3 pr-0 flex justify-end">
                     <button
                       className="text-sm bg-yellow-700 hover:bg-blue-700 text-white py-1 px-2 rounded-l mr-2"
-                      onClick={() => navigate(`/registeration/${user.usersId}`)}
+                      onClick={() => navigate(`/editUser/${user.usersId}`)}
                     >
                       Edit
                     </button>

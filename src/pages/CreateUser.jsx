@@ -37,6 +37,16 @@ function CreateUser() {
     return;
   }
 
+  if (password.length < 6) {
+    Swal.fire({
+      title: 'Error!',
+      text: 'Password must be at least 6 characters long.',
+      icon: 'error',
+      confirmButtonText: 'OK',
+    });
+    return;
+  }
+
     if (password !== cpassword) {
       Swal.fire({
         title: 'Error!',
