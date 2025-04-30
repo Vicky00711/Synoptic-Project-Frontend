@@ -29,7 +29,7 @@ function CourseMaterials() {
 
   const handleDownload = async (materialId) => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/students/course-materials/download/${materialId}`, {
+      const response = await axios.get(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/students/course-materials/download/${materialId}`, {
         responseType: 'blob', 
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,

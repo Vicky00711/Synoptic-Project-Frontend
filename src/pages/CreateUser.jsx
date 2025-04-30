@@ -58,7 +58,7 @@ function CreateUser() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/api/users', {
+      const response = await axios.post('http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/users', {
         firstName,
         lastName,
         email,

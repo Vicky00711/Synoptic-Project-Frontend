@@ -18,7 +18,7 @@ function AddCourseMaterials() {
     formData.append('file', file);
 
     try {
-      await axios.post(`http://localhost:8080/api/course-materials/upload/${gradeId}`, formData, {
+      await axios.post(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/course-materials/upload/${gradeId}`, formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'multipart/form-data',
@@ -34,7 +34,7 @@ function AddCourseMaterials() {
 
   const fetchMaterials = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/course-materials/grade/${gradeId}`, {
+      const response = await axios.get(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/course-materials/grade/${gradeId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
         },

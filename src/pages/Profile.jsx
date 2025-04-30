@@ -11,7 +11,7 @@ function Profile() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/students/profile', {
+        const response = await axios.get('http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/students/profile', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('authToken')}`,
             'Content-Type': 'application/json',

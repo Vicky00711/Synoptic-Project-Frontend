@@ -32,7 +32,7 @@ function AddTimeTable() {
     formData.append('file', file);
 
     try {
-      await axios.post(`http://localhost:8080/api/admin/upload-timetable/${gradeId}`, formData, {
+      await axios.post(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/admin/upload-timetable/${gradeId}`, formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'multipart/form-data',

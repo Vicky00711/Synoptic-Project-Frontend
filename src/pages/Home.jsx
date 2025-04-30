@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
+
 function Home() {
 
     const [email, setEmail] = useState('');
@@ -13,7 +14,7 @@ function Home() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8080/api/auth/login', {
+            const response = await axios.post('http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/auth/login', {
                 email,
                 password
             });

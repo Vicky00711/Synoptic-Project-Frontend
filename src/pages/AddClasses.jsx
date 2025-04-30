@@ -21,7 +21,7 @@ function AddClasses() {
 
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/admin/grade-level',
+        'http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/admin/grade-level',
         requestBody,
         {
           headers: {

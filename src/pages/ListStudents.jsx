@@ -11,7 +11,7 @@ function ListStudents() {
 
   const fetchStudents = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/api/admin/grade-level/${gradeId}/students`, {
+      const response = await axios.get(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/admin/grade-level/${gradeId}/students`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'application/json',

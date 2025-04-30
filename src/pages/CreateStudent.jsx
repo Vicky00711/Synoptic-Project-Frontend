@@ -40,7 +40,7 @@ function CreateStudent() {
 
     try {
       const response = await axios.post(
-        'http://localhost:8080/api/students',
+        'http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/students',
         {
           users: { usersId: Number(usersId) },
           enrollmentDate,

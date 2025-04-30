@@ -13,7 +13,7 @@ const navigate = useNavigate();
 
   const fetchClasses = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/admin/grade-levels', {
+      const response = await axios.get('http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/admin/grade-levels', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ const navigate = useNavigate();
 
   const handleDelete = async (gradeId) => {
     try {
-      const response = await axios.delete(`http://localhost:8080/api/admin/grade-level/${gradeId}`, {
+      const response = await axios.delete(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/admin/grade-level/${gradeId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'application/json',
