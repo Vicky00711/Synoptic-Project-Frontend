@@ -3,6 +3,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import {  getLocalEndpoint } from '../APICalls';
 
 
 function Home() {
@@ -14,7 +15,7 @@ function Home() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/auth/login', {
+            const response = await axios.post(`${getLocalEndpoint()}/api/auth/login`, {
                 email,
                 password
             });

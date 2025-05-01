@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Navbar from '../components/Navigation';
 import { Link } from 'react-router-dom';
+import { getLocalEndpoint } from '../APICalls';
 
 function CreateStudent() {
   const { userId } = useParams();
@@ -40,7 +41,7 @@ function CreateStudent() {
 
     try {
       const response = await axios.post(
-        'http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/students',
+        `${getLocalEndpoint()}/api/students`,
         {
           users: { usersId: Number(usersId) },
           enrollmentDate,

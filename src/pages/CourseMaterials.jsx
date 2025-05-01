@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom'; // To get gradeId from URL if needed
 import Navbar from '../components/NavigationStudent';
+import { getLocalEndpoint } from '../APICalls';
 
 function CourseMaterials() {
   const [materials, setMaterials] = useState([]);
@@ -10,7 +11,7 @@ function CourseMaterials() {
 
   const fetchMaterials = async () => {
     try {
-      const response = await axios.get(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/students/profile/course-materials`, {
+      const response = await axios.get(`${getLocalEndpoint()}/api/students/profile/course-materials`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'application/json',
@@ -29,7 +30,7 @@ function CourseMaterials() {
 
   const handleDownload = async (materialId) => {
     try {
-      const response = await axios.get(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/students/course-materials/download/${materialId}`, {
+      const response = await axios.get(`${getLocalEndpoint()}/api/students/course-materials/download/${materialId}`, {
         responseType: 'blob', 
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,

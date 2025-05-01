@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import NavigationStudent from '../components/NavigationStudent';
+import { getLocalEndpoint } from '../APICalls';
+
 
 function Profile() {
   const [profile, setProfile] = useState(null);
@@ -11,7 +13,7 @@ function Profile() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await axios.get('http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/students/profile', {
+        const response = await axios.get(`${getLocalEndpoint()}/api/students/profile`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('authToken')}`,
             'Content-Type': 'application/json',

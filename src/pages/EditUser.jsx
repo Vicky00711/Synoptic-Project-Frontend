@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Navbar from '../components/Navigation';
+import { getLocalEndpoint } from '../APICalls';
 
 function EditUser() {
   const { id } = useParams(); // userId
@@ -12,7 +13,7 @@ function EditUser() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/users/${id}`, {
+        const response = await axios.get(`${getLocalEndpoint()}/api/users/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('authToken')}`,
             'Content-Type': 'application/json',
@@ -34,7 +35,7 @@ function EditUser() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/users/${id}`, user, {
+      await axios.put(`${getLocalEndpoint()}/api/users/${id}`, user, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'application/json',

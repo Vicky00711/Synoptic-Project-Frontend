@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Navbar from '../components/Navigation';
+import { getLocalEndpoint } from '../APICalls';
 
 function ListUsers() {
   const [users, setUsers] = useState([]);
@@ -11,7 +12,7 @@ function ListUsers() {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/users/list-users', {
+      const response = await axios.get(`${getLocalEndpoint()}/api/users/list-users`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'application/json',
@@ -29,7 +30,7 @@ function ListUsers() {
 
   const handleDelete = async (userId) => {
     try {
-      const response = await axios.delete(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/users/${userId}`, {
+      const response = await axios.delete(`${getLocalEndpoint()}/api/users/${userId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'application/json',

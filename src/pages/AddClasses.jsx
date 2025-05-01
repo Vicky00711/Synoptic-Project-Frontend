@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Navbar from '../components/Navigation';
+import { getLocalEndpoint } from '../APICalls';
 
 function AddClasses() {
   const [name, setName] = useState('');
@@ -21,7 +22,7 @@ function AddClasses() {
 
     try {
       const response = await axios.post(
-        'http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/admin/grade-level',
+        `${getLocalEndpoint()}/api/admin/grade-level`,
         requestBody,
         {
           headers: {

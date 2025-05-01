@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Navbar from '../components/Navigation';
+import { getLocalEndpoint } from '../APICalls';
 
 function AddTimeTable() {
   const { gradeId } = useParams();
@@ -32,7 +33,7 @@ function AddTimeTable() {
     formData.append('file', file);
 
     try {
-      await axios.post(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/admin/upload-timetable/${gradeId}`, formData, {
+      await axios.post(`${getLocalEndpoint()}/api/admin/upload-timetable/${gradeId}`, formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'multipart/form-data',

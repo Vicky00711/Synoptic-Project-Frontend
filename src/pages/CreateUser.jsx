@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Navbar from '../components/Navigation';
+import { getLocalEndpoint } from '../APICalls';
 
 function CreateUser() {
   const [firstName, setFirstName] = useState('');
@@ -58,7 +59,7 @@ function CreateUser() {
     }
 
     try {
-      const response = await axios.post('http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/users', {
+      const response = await axios.post(`${getLocalEndpoint()}/api/users`, {
         firstName,
         lastName,
         email,

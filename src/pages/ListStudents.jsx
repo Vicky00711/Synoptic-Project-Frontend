@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Navbar from '../components/Navigation';
+import { getLocalEndpoint } from '../APICalls';
 
 function ListStudents() {
   const { gradeId } = useParams();
@@ -11,7 +12,7 @@ function ListStudents() {
 
   const fetchStudents = async () => {
     try {
-      const response = await axios.get(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/admin/grade-level/${gradeId}/students`, {
+      const response = await axios.get(`${getLocalEndpoint()}/api/admin/grade-level/${gradeId}/students`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'application/json',

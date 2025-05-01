@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Navbar from '../components/Navigation';
-import { getCloudEndpoint, getLocalEndpoint } from '../APICalls';
+import { getLocalEndpoint } from '../APICalls';
 
 
 
@@ -21,7 +21,7 @@ function AddCourseMaterials() {
     formData.append('file', file);
 
     try {
-      await axios.post(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/course-materials/upload/${gradeId}`, formData, {
+      await axios.post(`${getLocalEndpoint()}/api/course-materials/upload/${gradeId}`, formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
           'Content-Type': 'multipart/form-data',
@@ -37,7 +37,7 @@ function AddCourseMaterials() {
 
   const fetchMaterials = async () => {
     try {
-      const response = await axios.get(`http://Administrationsystem-env.eba-mm829pa2.eu-north-1.elasticbeanstalk.com/api/course-materials/grade/${gradeId}`, {
+      const response = await axios.get(`${getLocalEndpoint()}/api/course-materials/grade/${gradeId}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('authToken')}`,
         },
@@ -90,7 +90,7 @@ function AddCourseMaterials() {
           {materials.map((mat) => (
             <li key={mat.id} className="border p-2 rounded">
               <strong>{mat.subjectName}</strong> - {mat.topic} <br />
-              <a href={`http://localhost:8080/${mat.filePath}`} target="_blank" rel="noopener noreferrer" className="text-blue-500">
+              <a href={`${getLocalEndpoint()}/${mat.filePath}`} target="_blank" rel="noopener noreferrer" className="text-blue-500">
                 View Material
               </a>
             </li>
