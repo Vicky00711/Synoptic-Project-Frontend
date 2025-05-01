@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Navbar from '../components/Navigation';
+import { getCloudEndpoint, getLocalEndpoint } from '../APICalls';
+
+
 
 function AddCourseMaterials() {
   const { gradeId } = useParams();
@@ -25,7 +28,7 @@ function AddCourseMaterials() {
         },
       });
       Swal.fire('Uploaded!', 'Course material uploaded successfully.', 'success');
-      fetchMaterials(); // Refresh the list
+      fetchMaterials(); // Refresh the list of materials
     } catch (err) {
       console.error(err);
       Swal.fire('Error', 'Upload failed.', 'error');
