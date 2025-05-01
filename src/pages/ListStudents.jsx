@@ -42,7 +42,7 @@ function ListStudents() {
       <Navbar />
       <div className="text-gray-900 bg-gray-200">
         <div className="p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-          <h1 className="text-3xl">Students in Grade {gradeId}</h1>
+          <h1 className="text-3xl">Students in Grade Id: {gradeId}</h1>
           <input
             type="text"
             placeholder="Search by student name..."
