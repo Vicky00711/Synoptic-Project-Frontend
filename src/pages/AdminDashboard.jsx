@@ -59,7 +59,7 @@ const AdminDashboard = () => {
                  UPDATE, DELETE
               </p>
               <button className="flex mx-auto mt-4 text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded text-sm">
-                NEXT
+                Future Update
               </button>
             </div>
 
@@ -78,7 +78,7 @@ const AdminDashboard = () => {
                 UPDATE, DELETE
               </p>
               <button className="flex mx-auto mt-4 text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded text-sm">
-                Learn More
+                Future Update
               </button>
             </div>
           </div>
@@ -103,7 +103,7 @@ const AdminDashboard = () => {
                 LIST OF CLASSES
               </p>
               <button onClick={navigatePage2} className="flex mx-auto mt-4 text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded text-sm">
-                Learn More
+                NEXT
               </button>
             </div>
 
@@ -122,7 +122,7 @@ const AdminDashboard = () => {
                 SCHOOL NEWS
               </p>
               <button className="flex mx-auto mt-4 text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-600 rounded text-sm">
-                Learn More
+                Future Update
               </button>
             </div>
           </div>
